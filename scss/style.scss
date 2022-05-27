@@ -1,0 +1,48 @@
+$dark:#9e765b;
+$primary:#cfbbae;
+.curve {
+    width: 6rem;
+    height: 7rem;
+    background-color: #{$dark};
+    position: relative;
+    overflow: hidden;
+
+}
+
+.curve::after {
+    content: "";
+    display: block;
+    width: 200%;
+    height: 200%;
+    background-color: #{$primary};
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateX(-25%);
+
+}
+
+.sprator::before {
+    content: "";
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 30px solid transparent;
+    border-top: transparent 20px solid;
+    border-bottom: $dark 20px solid;
+    border-left: 20px transparent solid;
+    border-right: 20px transparent solid;
+}
+
+.sprator::after {
+    content: "";
+    border: 2px solid #{$dark};
+    width: 100%;
+}
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@each $color ,$value in $colors {
+    .bg-#{$color}{
+        background-color: $value !important ;
+    }
+}
